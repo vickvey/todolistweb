@@ -3,9 +3,54 @@
 {% block content %}
 
 <div class="container">
-    <h1 class="center-align">ToDoList Web App</h1>
-    
+    <!-- Heading -->
+    <h1 class="center-align">
+        <i class="fas fa-tasks"></i>
+        ToDoList Web App
+    </h1>
+
+    <div class="row">
+        <div class="col s6">
+            <ul class="collapsible">
+                {% for task in tasks %}
+                    <li>
+                        <div class="collapsible-header">
+                            <form action="#">
+                                <p>
+                                    <label>
+                                      <input type="checkbox" />
+                                      <span>{{ task.name }}</span>
+                                    </label>
+                                </p>
+                            </form>
+                        </div>
+                        <div class="collapsible-body">
+                            <span>{{ task.description }}</span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col s6 center">
+            <!-- TODO from here -->
+            <a class="btn-floating btn-large waves-effect waves-light red">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
+    </div>
     
 </div>
 
 {% endblock content %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+      });
+</script>
+{% endblock script %}
+
+
+
