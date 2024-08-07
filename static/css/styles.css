@@ -1,0 +1,28 @@
+/* static/css/styles.css */
+
+:root {
+    --color-light-blue: #c8d9ed;
+    --color-lightest-blue: #e1f1fd;
+    --color-light-blue-alt: #c1d8f0;
+    --color-dark-blue: #4663ac;
+    --color-gray-blue: #d2deeb;
+}
+
+body {
+    background-color: var(--color-lightest-blue);
+    color: var(--color-dark-blue);
+}
+
+.header {
+    background-color: var(--color-dark-blue);
+    color: var(--color-lightest-blue);
+}
+
+.button-primary {
+    background-color: var(--color-dark-blue);
+    color: var(--color-lightest-blue);
+}
+
+.button-primary:hover {
+    background-color: var(--color-light-blue-alt);
+}
