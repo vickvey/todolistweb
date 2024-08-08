@@ -11,7 +11,6 @@ def index(request):
     context={
         'tasks': tasks
     }
-
     return render(request, 'main/index.html', context)
 
 def addtask(request):
@@ -19,8 +18,7 @@ def addtask(request):
         form = forms.CreateTask(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/')  # Redirect to a success page or another view
+            return HttpResponseRedirect('/')
     else:
         form = forms.CreateTask()
-
     return render(request, 'main/addtask.html', {'form': form})

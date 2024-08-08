@@ -5,4 +5,3 @@ class CreateTask(forms.ModelForm):
     class Meta:
         model=models.Task
         fields=['name', 'description']
-        success='/'
