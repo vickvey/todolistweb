@@ -1,18 +1,15 @@
 /* Color Palette */
 :root {
-    --primary-color: #4663ac; /* Dark Blue */
-    --primary-light: #c8d9ed; /* Light Blue */
-    --primary-light-alt: #c1d8f0; /* Light Blue Alt */
-
-    --secondary-color: #e1f1fd; /* Lightest Blue */
-    --secondary-dark: #d2deeb; /* Gray Blue */
-    --text-color: #333; /* Dark Text Color */
+    --primary-color: #1E0342; /* Dark Purple */
+    --primary-light: #0E46A3; /* Deep Blue */
+    --primary-light-alt: #b2d1d4; /* Light Teal */
+    --secondary-color: #dbfffc; /* Light Aqua */
 }
 
 /* General Styles */
 body {
     background-color: var(--secondary-color);
-    color: var(--text-color);
+    color: var(--primary-color);
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -23,4 +20,65 @@ body {
     color: var(--secondary-color);
     padding: 16px;
     text-align: center;
+}
+
+/* Header Styles */
+header.lightblue {
+    background-color: var(--primary-light-alt); /* Deep Blue */
+    color: var(--primary-light); /* Light Aqua */
+    text-align: center; /* Center align text */
+}
+
+header.lightblue i {
+    margin-right: 8px; /* Space between icon and text */
+    color: var(--secondary-color); /* Light Aqua for icon */
+}
+
+/* Footer Styles */
+.page-footer.lightblue {
+    background-color: var(--primary-light-alt); /* Deep Blue for footer */
+    color: var(--primary-light); /* Light Aqua text in footer */
+    padding: 20px 0; /* Add padding for better spacing */
+}
+
+.page-footer.lightblue .container {
+    max-width: 1200px; /* Constrain width for large screens */
+    margin: 0 auto; /* Center container */
+}
+
+.page-footer.lightblue .row {
+    margin-bottom: 0; /* Remove bottom margin for rows */
+}
+
+.page-footer.lightblue h5 {
+    color: var(--primary-color); /* Dark Purple for headings */
+}
+
+.page-footer.lightblue p, .page-footer.lightblue ul {
+    color: var(--primary-color); /* Dark Purple for text */
+}
+
+.page-footer.lightblue a {
+    color: var(--primary-color); /* Dark Purple for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.page-footer.lightblue a:hover {
+    color: var(--primary-light); /* Light Teal for link hover */
+}
+
+.footer-copyright {
+    background-color: var(--primary-light-alt); /* Light Teal for copyright background */
+    color: var(--primary-color); /* Dark Purple text in copyright section */
+    padding: 10px 0; /* Padding for spacing */
+}
+
+.footer-copyright a {
+    color: var(--primary-color); /* Dark Purple for links in copyright section */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-copyright a:hover {
+    color: var(--primary-light); /* Deep Blue for link hover */
 }

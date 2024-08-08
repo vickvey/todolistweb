@@ -1,35 +1,53 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="container">
-  <!-- Heading -->
+<!-- Heading -->
+<header class="lightblue">
   <h1 class="center-align">
     <i class="fas fa-tasks"></i>
     ToDoList Web App
   </h1>
+</header>
 
+<div class="container">
   <!-- Task List Collapsible -->
   <div class="row">
     <!-- Task List -->
     <div class="col s6">
-      <ul class="collapsible">
-        {% for task in tasks %}
-        <li>
-          <div class="collapsible-header">
-            <form action="#">
-              <p>
-                <label>
-                  <input type="checkbox" />
-                  <span>{{ task.name }}</span>
-                </label>
-              </p>
-            </form>
-          </div>
-          <div class="collapsible-body">
-            <span>{{ task.description }}</span>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
+      <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <ul class="collapsible">
+          {% for task in tasks %}
+          <li>
+            <div class="collapsible-header">
+              <label>
+                <input
+                  type="checkbox"
+                  name="tasks"
+                  value="{{ task.id }}"
+                  {%
+                  if
+                  task.done
+                  %}checked{%
+                  endif
+                  %}
+                />
+                <span>{{ task.name }}</span>
+              </label>
+            </div>
+            <div class="collapsible-body">
+              <span>{{ task.description }}</span>
+            </div>
+          </li>
+          {% empty %}
+          <li>
+            <div class="collapsible-header">
+              <span>No incomplete tasks</span>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        <button type="submit" class="btn-primary">Update Tasks</button>
+      </form>
     </div>
 
     <!-- Task Operations List -->
