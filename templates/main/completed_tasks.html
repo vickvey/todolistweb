@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+
+  <!-- Header -->
+  <h1 class="center-align">Completed Task List</h1>
+
+  <ul class="collapsible">
+    {% for task in completed_tasks %}
+    <li>
+      <div class="collapsible-header">
+        <span>{{ task.name }}</span>
+      </div>
+      <div class="collapsible-body">
+        <p>{{ task.description }}</p>
+      </div>
+    </li>
+    {% empty %}
+    <li>
+      <div class="collapsible-header">
+        <span>No completed tasks</span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock content %}

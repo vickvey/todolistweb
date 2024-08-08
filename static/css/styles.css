@@ -1,102 +1,26 @@
-/* static/css/styles.css */
-
+/* Color Palette */
 :root {
-    --color-light-blue: #c8d9ed;
-    --color-lightest-blue: #e1f1fd;
-    --color-light-blue-alt: #c1d8f0;
-    --color-dark-blue: #4663ac;
-    --color-gray-blue: #d2deeb;
+    --primary-color: #4663ac; /* Dark Blue */
+    --primary-light: #c8d9ed; /* Light Blue */
+    --primary-light-alt: #c1d8f0; /* Light Blue Alt */
+
+    --secondary-color: #e1f1fd; /* Lightest Blue */
+    --secondary-dark: #d2deeb; /* Gray Blue */
+    --text-color: #333; /* Dark Text Color */
 }
 
+/* General Styles */
 body {
-    background-color: var(--color-lightest-blue);
-    color: var(--color-dark-blue);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
+/* Header Styles */
 .header {
-    background-color: var(--color-dark-blue);
-    color: var(--color-lightest-blue);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 16px;
     text-align: center;
-}
-
-.button-primary {
-    background-color: var(--color-dark-blue);
-    color: var(--color-lightest-blue);
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 16px;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.button-primary:hover {
-    background-color: var(--color-light-blue-alt);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-floating {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-dark-blue);
-    color: var(--color-lightest-blue);
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.btn-floating:hover {
-    background-color: var(--color-light-blue-alt);
-}
-
-.material-icons {
-    font-size: 24px;
-}
-
-.btn-text {
-    font-size: 16px;
-    color: var(--color-dark-blue);
-    margin-left: 10px;
-    display: inline-block;
-    vertical-align: middle;
-    white-space: nowrap;
-}
-
-.card {
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.card-content {
-    padding: 16px;
-}
-
-.card-title {
-    font-size: 24px;
-    margin-bottom: 16px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    .material-icons {
-        font-size: 20px;
-    }
-
-    .btn-text {
-        font-size: 14px;
-    }
 }
