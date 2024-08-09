@@ -4,7 +4,6 @@
 
 [build.environment]
   DJANGO_SETTINGS_MODULE = "todolistweb.settings"
-  PYTHON_VERSION = "3.8"
 
 [[redirects]]
   from = "/*"
@@ -16,6 +15,3 @@
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
-
-[context.production.environment]
-  DJANGO_DEBUG = "False"
