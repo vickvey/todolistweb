@@ -1,0 +1,36 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "manage.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "50mb",
+          "functions": {
+            "api/**.py": {
+              "maxDuration": 60
+            }
+          }
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/media/(.*)",
+        "dest": "/media/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/manage.py"
+      }
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "todolistweb.settings",
+      "DJANGO_DEBUG": "False"
+    }
+  }
+  
