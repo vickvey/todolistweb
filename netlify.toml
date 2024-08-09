@@ -1,11 +1,10 @@
 [build]
-  command = "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn todolistweb.wsgi"
+  command = "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
   publish = "staticfiles"
-  functions = "functions"
 
 [build.environment]
   DJANGO_SETTINGS_MODULE = "todolistweb.settings"
-  PYTHON_VERSION = "3.9"  # Make sure this matches your Python version
+  PYTHON_VERSION = "3.12.3"
 
 [[redirects]]
   from = "/*"
