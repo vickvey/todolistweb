@@ -15,4 +15,5 @@ sqlparse = "==0.5.1"
 [dev-packages]
 
 [requires]
-python_version = "3.12"
+python_version = "3.8"
+
