@@ -4,7 +4,7 @@
 
 [build.environment]
   DJANGO_SETTINGS_MODULE = "todolistweb.settings"
-  PYTHON_VERSION = "3.12.3"
+  PYTHON_VERSION = "3.9" # Ensure this is a supported version
 
 [[redirects]]
   from = "/*"
@@ -19,6 +19,3 @@
 
 [context.production.environment]
   DJANGO_DEBUG = "False"
-
-[context.production]
-  command = "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn todolistweb.wsgi"
