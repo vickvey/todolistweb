@@ -1,0 +1,25 @@
+[build]
+  command = "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn todolistweb.wsgi"
+  publish = "staticfiles"
+  functions = "functions"
+
+[build.environment]
+  DJANGO_SETTINGS_MODULE = "todolistweb.settings"
+  PYTHON_VERSION = "3.9"  # Make sure this matches your Python version
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[context.production.environment]
+  DJANGO_DEBUG = "False"
+
+[context.production]
+  command = "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn todolistweb.wsgi"
