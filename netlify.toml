@@ -4,7 +4,7 @@
 
 [build.environment]
   DJANGO_SETTINGS_MODULE = "todolistweb.settings"
-  PYTHON_VERSION = "3.9" # Use a supported version
+  PYTHON_VERSION = "3.8"
 
 [[redirects]]
   from = "/*"
